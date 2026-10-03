@@ -1,0 +1,114 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-anek: 'Anek Tamil', sans-serif;
+    --font-mukta: 'Mukta Malar', sans-serif;
+    --font-arima: 'Arima', cursive;
+  }
+
+  body {
+    font-family: var(--font-anek);
+    background-color: #080706;
+    color: #f4ebd0;
+    overflow-x: hidden;
+  }
+
+  /* Custom Smooth Scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #080706;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #2a241f;
+    border-radius: 3px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #d4af37;
+  }
+}
+
+/* Custom Utility Classes */
+.font-anek {
+  font-family: 'Anek Tamil', sans-serif;
+}
+
+.font-mukta {
+  font-family: 'Mukta Malar', sans-serif;
+}
+
+.font-arima {
+  font-family: 'Arima', cursive;
+}
+
+/* Glassmorphism */
+.glass-panel {
+  background: rgba(26, 22, 20, 0.65);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(212, 175, 55, 0.15);
+}
+
+.glass-panel-gold {
+  background: linear-gradient(135deg, rgba(35, 28, 22, 0.8), rgba(15, 12, 10, 0.9));
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* Soft Glow Text */
+.gold-glow {
+  text-shadow: 0 0 20px rgba(212, 175, 55, 0.4), 0 0 40px rgba(212, 175, 55, 0.2);
+}
+
+.cream-glow {
+  text-shadow: 0 0 15px rgba(244, 235, 208, 0.3);
+}
+
+/* Vignette Overlay */
+.vignette-overlay {
+  background: radial-gradient(circle at center, transparent 40%, rgba(8, 7, 6, 0.85) 100%);
+}
+
+/* Subtle Floating Animation */
+@keyframes floatGentle {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-8px) rotate(0.5deg);
+  }
+}
+
+.animate-float {
+  animation: floatGentle 6s ease-in-out infinite;
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.6;
+    transform: scale(1.05);
+  }
+}
+
+.animate-glow {
+  animation: pulseGlow 4s ease-in-out infinite;
+}
+
+/* Hide scrollbar for clean horizontal containers */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
